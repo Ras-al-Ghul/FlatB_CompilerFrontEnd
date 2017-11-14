@@ -1,0 +1,396 @@
+<program>
+    <declblock>
+    statement count = "5"
+        <declaration name="hello" type="INT"/>
+        <declaration name="hi" type="INT"/>
+        <declaration name="damn" type="INT"/>
+        <declaration name="data" count="100" type="INT"/>
+        <declaration name="hi" type="INT"/>
+        <declaration name="dem" count="1000" type="INT"/>
+        <declaration name="i" type="INT"/>
+        <declaration name="sum" type="INT"/>
+        <declaration name="in" type="INT"/>
+    </declblock>
+    <codeblock>
+        <statement>
+            <assignment stmt>
+            <LHS>
+                <Identifier name="i"/>
+            </LHS>
+            <RHS>
+                <Literal int value="0"/>
+            </RHS>
+            </assignment stmt>
+        </statement>
+        <statement>
+            <assignment stmt>
+            <LHS>
+                <array name>
+                <Identifier name="data"/>
+                </array name>
+                <array expr>
+                <Identifier name="i"/>
+                </array expr>
+            </LHS>
+            <RHS>
+                <Identifier name="i"/>
+            </RHS>
+            </assignment stmt>
+        </statement>
+        <statement>
+            <assignment stmt>
+            <LHS>
+                <Identifier name="i"/>
+            </LHS>
+            <RHS>
+                <arith expression operator="+">
+                    <Identifier name="i"/>
+                    <Literal int value="1"/>
+                </arith expression>
+            </RHS>
+            </assignment stmt>
+        </statement>
+        <statement>
+            <assignment stmt>
+            <LHS>
+                <Identifier name="sum"/>
+            </LHS>
+            <RHS>
+                <Literal int value="0"/>
+            </RHS>
+            </assignment stmt>
+        </statement>
+        <statement>
+            <assignment stmt>
+            <LHS>
+                <Identifier name="sum"/>
+            </LHS>
+            <RHS>
+                <arith expression operator="+">
+                    <Identifier name="sum"/>
+                    <array expression Identifier="data">
+                        <Identifier name="i"/>
+                    </array expression>
+                </arith expression>
+            </RHS>
+            </assignment stmt>
+        </statement>
+        <statement>
+            <print statement with "2" args>
+                <Literal string value=""Sum value: ""/>
+                <Identifier name="sum"/>
+            </end print>
+        </statement>
+        <statement>
+            <println statement with "3" args>
+                <array expression Identifier="a">
+                    <Literal int value="100"/>
+                </array expression>
+                <Literal string value=""sums""/>
+                <Identifier name="ab"/>
+            </end print>
+        </statement>
+        <statement with label>
+        <Identifier name="L3"/>
+            <read stmnt>
+                <var name>
+                <Identifier name="sum"/>
+                </var name>
+            </read stmnt>
+        </statement>
+        <statement>
+            <read stmnt>
+                <array name>
+                <Identifier name="data"/>
+                </array name>
+                <array expr>
+                <Identifier name="i"/>
+                </array expr>
+            </read stmnt>
+        </statement>
+        <statement with label>
+        <Identifier name="L1"/>
+            <for loop>
+            <counter variable>
+                <Identifier name="i"/>
+            </counter variable>
+            <begin>
+                <Literal int value="1"/>
+            </begin>
+            <end>
+                <Literal int value="100"/>
+            </end>
+            <step>
+                <Literal value="1"/>
+            </step>
+            <statements>
+                <statement>
+                    <assignment stmt>
+                    <LHS>
+                        <array name>
+                        <Identifier name="data"/>
+                        </array name>
+                        <array expr>
+                        <Identifier name="i"/>
+                        </array expr>
+                    </LHS>
+                    <RHS>
+                        <Identifier name="i"/>
+                    </RHS>
+                    </assignment stmt>
+                </statement>
+            </statements>
+            </for loop>
+        </statement>
+        <statement>
+            <for loop>
+            <counter variable>
+                <Identifier name="i"/>
+            </counter variable>
+            <begin>
+                <Literal int value="1"/>
+            </begin>
+            <end>
+                <Literal int value="100"/>
+            </end>
+            <step>
+                <Literal int value="5"/>
+            </step>
+            <statements>
+                <statement with label>
+                <Identifier name="L2"/>
+                    <assignment stmt>
+                    <LHS>
+                        <Identifier name="sum"/>
+                    </LHS>
+                    <RHS>
+                        <arith expression operator="+">
+                            <Identifier name="sum"/>
+                            <array expression Identifier="data">
+                                <Identifier name="i"/>
+                            </array expression>
+                        </arith expression>
+                    </RHS>
+                    </assignment stmt>
+                </statement>
+            </statements>
+            </for loop>
+        </statement>
+        <statement>
+            <while loop>
+            <test expression>
+                <braced bool expression>
+                <bool expression> compare="<">
+                    <Identifier name="i"/>
+                    <Literal int value="100"/>
+                </bool expression>
+                </braced bool expression>
+            <test expression>
+            <statements>
+                <statement>
+                    <assignment stmt>
+                    <LHS>
+                        <Identifier name="gotohell"/>
+                    </LHS>
+                    <RHS>
+                        <Identifier name="why"/>
+                    </RHS>
+                    </assignment stmt>
+                </statement>
+            </statements>
+            </while loop>
+        </statement>
+        <statement>
+            <for loop>
+            <counter variable>
+                <Identifier name="i"/>
+            </counter variable>
+            <begin>
+                <Literal int value="1"/>
+            </begin>
+            <end>
+                <Literal int value="100"/>
+            </end>
+            <step>
+                <Literal value="1"/>
+            </step>
+            <statements>
+                <statement with label>
+                <Identifier name="yoyo"/>
+                    <assignment stmt>
+                    <LHS>
+                        <Identifier name="sum"/>
+                    </LHS>
+                    <RHS>
+                        <arith expression operator="+">
+                            <Identifier name="sum"/>
+                            <array expression Identifier="data">
+                                <Identifier name="i"/>
+                            </array expression>
+                        </arith expression>
+                    </RHS>
+                    </assignment stmt>
+                </statement>
+                <statement>
+                    <while loop>
+                    <test expression>
+                        <bool expression> compare=">">
+                            <arith expression operator="+">
+                                <arith expression operator="*">
+                                    <Literal int value="2"/>
+                                    <Literal int value="2"/>
+                                </arith expression>
+                                <Literal int value="2"/>
+                            </arith expression>
+                            <arith expression operator="*">
+                                <Literal int value="1"/>
+                                <array expression Identifier="data">
+                                    <Identifier name="ij"/>
+                                </array expression>
+                            </arith expression>
+                        </bool expression>
+                    <test expression>
+                    <statements>
+                        <statement>
+                            <assignment stmt>
+                            <LHS>
+                                <Identifier name="damn"/>
+                            </LHS>
+                            <RHS>
+                                <Literal int value="0"/>
+                            </RHS>
+                            </assignment stmt>
+                        </statement>
+                    </statements>
+                    </while loop>
+                </statement>
+            </statements>
+            </for loop>
+        </statement>
+        <statement>
+            <if condition>
+                <bool expression> compare=">=">
+                    <Identifier name="c"/>
+                    <Literal int value="1"/>
+                </bool expression>
+            </condition>
+            <if statement>
+                <statement>
+                    <assignment stmt>
+                    <LHS>
+                        <Identifier name="nope"/>
+                    </LHS>
+                    <RHS>
+                        <Literal int value="20"/>
+                    </RHS>
+                    </assignment stmt>
+                </statement>
+            </if>
+        </statement>
+        <statement>
+            <if condition>
+                <braced bool expression>
+                <bool expression> compare="<">
+                    <Identifier name="a"/>
+                    <Identifier name="b"/>
+                </bool expression>
+                </braced bool expression>
+            </condition>
+            <if statement>
+                <statement>
+                    <assignment stmt>
+                    <LHS>
+                        <Identifier name="hello"/>
+                    </LHS>
+                    <RHS>
+                        <Identifier name="hi"/>
+                    </RHS>
+                    </assignment stmt>
+                </statement>
+            </if>
+            <else statement>
+                <statement>
+                    <for loop>
+                    <counter variable>
+                        <Identifier name="i"/>
+                    </counter variable>
+                    <begin>
+                        <Literal int value="1"/>
+                    </begin>
+                    <end>
+                        <Literal int value="100"/>
+                    </end>
+                    <step>
+                        <Literal value="1"/>
+                    </step>
+                    <statements>
+                        <statement>
+                            <assignment stmt>
+                            <LHS>
+                                <Identifier name="sum"/>
+                            </LHS>
+                            <RHS>
+                                <arith expression operator="+">
+                                    <Identifier name="sum"/>
+                                    <array expression Identifier="data">
+                                        <Identifier name="i"/>
+                                    </array expression>
+                                </arith expression>
+                            </RHS>
+                            </assignment stmt>
+                        </statement>
+                        <statement>
+                            <for loop>
+                            <counter variable>
+                                <Identifier name="i"/>
+                            </counter variable>
+                            <begin>
+                                <Literal int value="100"/>
+                            </begin>
+                            <end>
+                                <Literal int value="1"/>
+                            </end>
+                            <step>
+                                <negative expression>
+                                    <Literal int value="1"/>
+                                </negative expression>
+                            </step>
+                            <statements>
+                                <statement>
+                                    <assignment stmt>
+                                    <LHS>
+                                        <Identifier name="sum"/>
+                                    </LHS>
+                                    <RHS>
+                                        <Literal int value="0"/>
+                                    </RHS>
+                                    </assignment stmt>
+                                </statement>
+                            </statements>
+                            </for loop>
+                        </statement>
+                    </statements>
+                    </for loop>
+                </statement>
+            </else>
+        </statement>
+        <statement>
+            <conditional goto>
+                <bool expression> compare="<">
+                    <Identifier name="i"/>
+                    <Literal int value="100"/>
+                </bool expression>
+            <label>
+                <Identifier name="L2"/>
+            </label>
+            </goto>
+        </statement>
+        <statement>
+            <unconditional goto>
+            <label>
+                <Identifier name="L1"/>
+            </label>
+            </goto>
+        </statement>
+    </codeblock>
+</program>
