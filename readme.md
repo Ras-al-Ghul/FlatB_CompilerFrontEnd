@@ -1,4 +1,4 @@
-# Compiler AST  
+# FlatB - Compiler AST, Interpreter and LLVM IR Generation 
 ### Execution
 `To run:`  
 - `make`
